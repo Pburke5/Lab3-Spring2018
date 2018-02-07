@@ -22,13 +22,15 @@ public class Main {
         return contents;
     }
     public static void main(String[] args) {
-        String full = urlToString(http://erdani.com/tdpl/hamlet.txt);
+        String full = urlToString("http://erdani.com/tdpl/hamlet.txt");
+        //String[] sentences = full.split(" ");
         int wordcount = 0;
-        for (int y = 0; y < full.length()); y ++) {
+        for (int y = 0; y < full.length(); y ++) {
             if (full.charAt(y) == ' ') {
                 wordcount += 1;
             }
         }
+        System.out.println(wordcount);
 
     }
 }
