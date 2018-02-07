@@ -1,6 +1,34 @@
-public class Main {
+import java.io.IOException;
+import java.net.URL;
+import java.util.Scanner;
 
+
+public class Main {
+    /**
+     * Retrieve contents from a URL and return them as a string.
+     *
+     * @param url
+     * @return the contents from the url as a string, or an empty string on error
+     */
+    public static String urlToString(final String url) {
+        Scanner urlScanner;
+        try {
+            urlScanner = new Scanner(new URL(url).openStream(), "UTF-8");
+        } catch (IOException e) {
+            return "";
+        }
+        String contents = urlScanner.useDelimiter("\\A").next();
+        urlScanner.close();
+        return contents;
+    }
     public static void main(String[] args) {
-        System.out.println("Here");
+        String full = urlToString(http://erdani.com/tdpl/hamlet.txt);
+        int wordcount = 0;
+        for (int y = 0; y < full.length()); y ++) {
+            if (full.charAt(y) == ' ') {
+                wordcount += 1;
+            }
+        }
+
     }
 }
